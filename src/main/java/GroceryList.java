@@ -23,11 +23,18 @@ public class GroceryList {
     // Replaces the item with null
     // Remember to shift anything to the left if necessary
     public void remove(String item) {
+        int counter = 0;
         for (int i = 0; i < arr.length; i++){
             if(arr[i] == item){
                 arr[i] = null;
+                counter = i;
             }
         }
+        for (int i = counter; i < arr.length - 1; i++){
+            arr[i] =arr[i + 1];
+
+        }
+        arr[9] = null;
     }
 
     // Returns a String representation the grocery list
